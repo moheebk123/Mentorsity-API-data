@@ -16,7 +16,11 @@ const fetchData = ( searchTerm ) => {
             // Populate the list with filtered data
             filteredData.forEach( item => {
                 const listItem = document.createElement('li');
-                listItem.innerText = item.title;
+                listItem.innerHTML = `
+                    <img src="${item.url}">
+                    <br>
+                    <div>${item.title}</div>
+                `;
                 resultsList.appendChild( listItem );
             } );
         } )
